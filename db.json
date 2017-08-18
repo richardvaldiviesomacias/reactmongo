@@ -1,0 +1,36 @@
+{
+  "contracts": [
+    {
+      "id": 1,
+      "name": "John",
+      "lastName": "Doe"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "contact1",
+      "lastName": "contactlastname1"
+    },
+    {
+      "id": 2,
+      "name": "contact2",
+      "lastName": "contactlastname2"
+    },
+    {
+      "id": 3,
+      "name": "contact3",
+      "lastName": "contactlastname3"
+    },
+    {
+      "id": 4,
+      "name": "contact4",
+      "lastName": "contactlastname4"
+    },
+    {
+      "id": 5,
+      "name": "contact5",
+      "lastName": "contactlastname5"
+    }
+  ]
+}
