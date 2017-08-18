@@ -15,3 +15,6 @@
     ```
     
  After the above steps you should be able to see the dev tools and check the output.
+ 
+ Todo next:
+ Work with redux
