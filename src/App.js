@@ -1,16 +1,20 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import minimongo from 'minimongo';
+
 import axios from 'axios';
-let LocalDb = minimongo.MemoryDb;
-let db = new LocalDb();
+let gstate;
 
 class App extends Component {
 
+    constructor(props) {
+        super(props);
+        gstate = window.db
+    }
+
     initializeDB(response) {
          response.data.forEach((contract)=>{
-            db.contracts.upsert(contract, function() {
+            gstate.contracts.upsert(contract, function() {
                 console.log("save", contract);
             });
         })
@@ -18,13 +22,13 @@ class App extends Component {
 
     componentDidMount() {
         let that = this;
-        db.addCollection("contracts");
+        gstate.addCollection("contracts");
 
         axios.get('http://localhost:3001/contacts')
             .then(function (response) {
                 console.log(response)
                 that.initializeDB(response);
-                db.contracts.findOne({ id:1 }, {}, function(res) {
+                gstate.contracts.findOne({ id:1 }, {}, function(res) {
                     console.log("Contract's name is: " + res.name);
                 });
 
